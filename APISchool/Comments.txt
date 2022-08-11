@@ -1,0 +1,1 @@
+﻿Cambiar la configiracion de la BD para ponerle usuario y contraseña
