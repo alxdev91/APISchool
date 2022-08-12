@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;//se agrego par autilizar el [JsonIgnore]
 
 namespace APISchool.Models
 {
@@ -22,6 +23,8 @@ namespace APISchool.Models
         public DateTime? UnsubscribeDate { get; set; }
 
         public virtual ICollection<Contact> Contacts { get; set; }
+
+        [JsonIgnore]//se agrega para que no se muestre en el resultado
         public virtual ICollection<Payment> Payments { get; set; }
     }
 }

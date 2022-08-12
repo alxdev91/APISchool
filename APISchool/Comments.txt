@@ -1,1 +1,7 @@
 ﻿Cambiar la configiracion de la BD para ponerle usuario y contraseña
+
+Es necesario crear la relacion  y que muestre el objeto del estudiante dentro de los datos del estudiante
+
+Revisar si es bueno editar un pago
+
+Revisar si en vez de eliminar mejor lo desactivamos y que el admin lo elimine

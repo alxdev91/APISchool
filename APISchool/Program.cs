@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore; //se agrega
 using APISchool.Models;             //se agrega
+using System.Text.Json.Serialization;//se agrega para utilizar el referenceshandler,para eliminar referencias ciclicas
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,10 @@ builder.Services.AddSwaggerGen();
 //se agrega
 builder.Services.AddDbContext<DB_API_SCHOOLContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("StringSQL")));
 
+builder.Services.AddControllers().AddJsonOptions(opt =>
+{
+    opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+});
 
 var app = builder.Build();
 
