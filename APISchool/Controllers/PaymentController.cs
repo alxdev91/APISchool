@@ -139,5 +139,25 @@ namespace APISchool.Controllers
             }
         }
 
+        //Metodo de busqueda de pago por estudiante
+        [HttpGet]
+        [Route("Student/{idStudent:int}")]
+        public IActionResult GetByIdStudent(int idStudent)
+        {
+            List<Payment> ListPaymentsStudnt = new List<Payment>();
+
+
+            try
+            {
+                ListPaymentsStudnt = _dbcontext.Payments.Where(c => c.IdStudent == idStudent).ToList();
+                //lista = _dbcontext.Alumnos.Include(c => c.Contactos).ToList();
+                return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = ListPaymentsStudnt });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status200OK, new { mensaje = ex.Message, response = ListPaymentsStudnt });
+            }
+        }
+
     }
 }
