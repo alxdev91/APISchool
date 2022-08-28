@@ -31,5 +31,6 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+//app.MapGet("/", () => "Hello World!");//Se agrego
 
 app.Run();
