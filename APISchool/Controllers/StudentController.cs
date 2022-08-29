@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 
 using Microsoft.EntityFrameworkCore;//se agrego
 using APISchool.Models;//se agrego
+using Microsoft.AspNetCore.Authorization;//se agrega para uso de token
 
 namespace APISchool.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]//se agrega para uso de token
     [ApiController]
     public class StudentController : ControllerBase
     {
